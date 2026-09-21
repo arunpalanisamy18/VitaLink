@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "VitaLink",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": -10,
+      "left": 360,
+      "attrs": {
+        "i2cAddress": "0x3C"
+      }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu",
+      "top": 220,
+      "left": 360,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp:3V3.1", "oled:3V3", "red", []],
+    ["esp:GND.1", "oled:GND", "black", []],
+    ["esp:8", "oled:DATA", "green", []],
+    ["esp:9", "oled:CLK", "blue", []],
+    ["esp:3V3.2", "mpu:VCC", "red", []],
+    ["esp:GND.2", "mpu:GND", "black", []],
+    ["esp:8", "mpu:SDA", "green", []],
+    ["esp:9", "mpu:SCL", "blue", []]
+  ],
+  "dependencies": {}
+}
